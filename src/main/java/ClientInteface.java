@@ -21,8 +21,8 @@ public class ClientInteface {
 		SharedTorrent torrent = SharedTorrent
 				.fromFile(
 						new File(
-								"G:\\TestFolderBitTorrent\\seed.torrent"
-										+ ""), new File("G:"));
+								"/home/upadhyy3/bitTorrentTestFolder/seed.torrent"
+										+ ""), new File("/home/upadhyy3/bitTorrentUploadFolder/"));
 							//	"G:\\TestFolderBitTorrentUpload"));
 		System.out.println(torrent.getName());
 		// Client client = new Client(addr.getAddress(), torrent);

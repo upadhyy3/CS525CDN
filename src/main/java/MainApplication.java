@@ -18,7 +18,7 @@ import com.turn.ttorrent.tracker.Tracker;
 public class MainApplication {
 
 	public static void main(String args[]) {
-		String sharedFile = "G:\\TestFolderBitTorrent\\IMAG0883.jpg";
+		String sharedFile = "/home/upadhyy3/bitTorrentTestFolder/test.pdf";
 
 		try {
 			// Tracker tracker = new Tracker(new
@@ -46,14 +46,14 @@ public class MainApplication {
 			// }
 
 			FileOutputStream fos = new FileOutputStream(
-					"G:\\TestFolderBitTorrent\\seed.torrent");
+					"/home/upadhyy3/bitTorrentTestFolder/seed.torrent");
 			torrent.save(fos);
 			fos.close();
 
 			tracker.announce(new TrackedTorrent(torrent));
 			Client seeder = new Client(InetAddress.getLocalHost(),
 					new SharedTorrent(torrent, new File(
-							"G:\\TestFolderBitTorrent"), true));
+							"/home/upadhyy3/bitTorrentTestFolder"), true));
 			seeder.share();
 			while (!ClientState.SEEDING.equals(seeder.getState())) {
 				// Check if there's an error
